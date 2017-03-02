@@ -13,7 +13,7 @@ int _tmain(int argc, _TCHAR* argv[])
 {
 	srand((unsigned int)time(NULL));
 
-	bool bGenerateMZs = 0;
+	bool bGenerateMZs = 1;
 
 	MZHandler* handler = new MZHandler();
 	if (handler->Go((bool)bGenerateMZs) == 0)

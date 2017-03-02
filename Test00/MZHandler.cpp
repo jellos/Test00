@@ -9,7 +9,7 @@ MZHandler::MZHandler()
 {
 	m_bConnectedToMySQL = false;
 	m_bVerbose = true;
-	m_iGenerateNMZ = 1000;
+	m_iGenerateNMZ = 100;
 }
 
 MZHandler::~MZHandler()
