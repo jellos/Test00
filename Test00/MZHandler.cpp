@@ -9,7 +9,7 @@ MZHandler::MZHandler()
 {
 	m_bConnectedToMySQL = false;
 	m_bVerbose = true;
-	m_iGenerateNMZ = 100;
+	m_iGenerateNMZ = 20;
 }
 
 MZHandler::~MZHandler()
@@ -53,11 +53,7 @@ int MZHandler::Go(bool bGenerateNew)
 		{
 			mz = new MZ();
 			mz->generateMZ(4, 6, m_bVerbose);
-			//mz->printMZString();
-			//mz->printVisual(true);
-			//mz->printIntersections();
-			//mz->printRoutesAndStats();
-
+			
 			if (m_bConnectedToMySQL)
 			{
 				if (m_bVerbose)
