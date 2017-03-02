@@ -1,0 +1,33 @@
+128c128,129
+< #if !(defined(__WIN__) || defined(__NETWARE__))
+---
+> //#if !(defined(__WIN__) || defined(__NETWARE__))
+> #if !(defined(__NETWARE__))
+150c151,152
+< #if defined(__WIN__) || defined(__NETWARE__)
+---
+> // #if defined(__WIN__) || defined(__NETWARE__)
+> #if defined(__NETWARE__)
+162a165,170
+> #if defined(__WIN__)
+>   flags = 1;
+> #ifdef O_NONBLOCK
+>   ioctlsocket(fd, FIONBIO, &flags);
+> #endif
+> #else
+166a175
+> #endif
+168a178,183
+> #if defined(__WIN__)
+>   s_err= WSAGetLastError();
+>   flags = 0;
+>   ioctlsocket(fd, FIONBIO, &flags);
+>   if ((res != 0) && (s_err != WSAEWOULDBLOCK))
+> #else
+171a187
+> #endif
+190c206,207
+< #if !(defined(__WIN__) || defined(__NETWARE__))
+---
+> //#if !(defined(__WIN__) || defined(__NETWARE__))
+> #if !(defined(__NETWARE__))

@@ -1,0 +1,28 @@
+﻿Build started 3/2/2017 3:18:47 PM.
+     1>Project "D:\Studio\PROJECT\Test00\Test00\Test00.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Release\Test00.pch" /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Release\Test00.pch" /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt CL.cpp MZ.cpp MZHandler.cpp rtimer.cpp Test00.cpp xmysql.cpp
+         CL.cpp
+         MZ.cpp
+         MZHandler.cpp
+         rtimer.cpp
+         Test00.cpp
+         xmysql.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Studio\PROJECT\Test00\Release\Test00.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Studio\PROJECT\Test00\Release\Test00.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Studio\PROJECT\Test00\Release\Test00.lib" /MACHINE:X86 /SAFESEH Release\CL.obj
+         Release\MZ.obj
+         Release\MZHandler.obj
+         Release\rtimer.obj
+         Release\stdafx.obj
+         Release\Test00.obj
+         Release\xmysql.obj
+         Generating code
+         Finished generating code
+         Test00.vcxproj -> D:\Studio\PROJECT\Test00\Release\Test00.exe
+     1>Done Building Project "D:\Studio\PROJECT\Test00\Test00\Test00.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.51
