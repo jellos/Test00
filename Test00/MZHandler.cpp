@@ -4,27 +4,32 @@
 #include "xmysql.h"
 #include <iostream>
 
+#define	GENERATE_NEW				0
+#define MINIMAL_ROUTE_COVERAGE		40
+#define	GENERATE_HOW_MANY			200
+
+#define	WIDTH						5
+#define	HEIGHT						12
 
 MZHandler::MZHandler()
 {
 	m_bConnectedToMySQL = false;
 	m_bVerbose = true;
-	m_iGenerateNMZ = 20;
 }
 
 MZHandler::~MZHandler()
 {
 }
 
-int MZHandler::Go(bool bGenerateNew)
+int MZHandler::Go()
 {
 	MZ* mz;
 
-	if (!bGenerateNew)
+	if (!(bool)GENERATE_NEW)
 	{
 		mz = new MZ();
-		CString mzString = _T("6bac9aa259cd5516361c9a67");
-		if (!mz->setMZ(4, 6, 7, 0, mzString))
+		CString mzString = _T("3675dd9a26369cd9a6345ddd5126555d9062653e9e3cd1aa611a8a4590c7");
+		if (!mz->setMZ(WIDTH, HEIGHT, 49, 35, mzString))
 			return 0;
 
 		mz->printMZString();
@@ -49,22 +54,22 @@ int MZHandler::Go(bool bGenerateNew)
 
 		CString sMessage;
 		int nInserted = 0;
-		for (int iteration = 0; iteration < m_iGenerateNMZ; iteration++)
+		for (int iteration = 0; iteration < GENERATE_HOW_MANY; iteration++)
 		{
 			mz = new MZ();
-			mz->generateMZ(4, 6, m_bVerbose);
+			mz->generateMZ(WIDTH, HEIGHT, m_bVerbose);
 			
 			if (m_bConnectedToMySQL)
 			{
 				if (m_bVerbose)
 				{
-					sMessage.Format(_T("\niteration: %i / %i\n"), iteration, m_iGenerateNMZ);
+					sMessage.Format(_T("\niteration: %i / %i\n"), iteration, GENERATE_HOW_MANY);
 					OutputDebugString(sMessage);
 				}
-				std::cout << "iteration: " << iteration << " / " << m_iGenerateNMZ << " coverage: " << (int) mz->getRouteCoverage() << " nInserted: " << nInserted << "\n";
+				std::cout << "iteration: " << iteration << " / " << GENERATE_HOW_MANY << " coverage: " << (int) mz->getRouteCoverage() << " nInserted: " << nInserted << "\n";
 				if (mz->getMinIntersections() > 0)
 				{
-					if (mz->getRouteCoverage() > 33)
+					if (mz->getRouteCoverage() > MINIMAL_ROUTE_COVERAGE)
 					{
 						CString insertStr;
 						insertStr.Format(_T("insert into zmz.mz (datetimeid, mzstring, width, height, the_entrance, the_exit, route_coverage, row_utilization, min_intersections, opposing_steps) \

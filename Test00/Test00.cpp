@@ -13,10 +13,8 @@ int _tmain(int argc, _TCHAR* argv[])
 {
 	srand((unsigned int)time(NULL));
 
-	bool bGenerateMZs = 0;
-
 	MZHandler* handler = new MZHandler();
-	if (handler->Go((bool)bGenerateMZs) == 0)
+	if (handler->Go() == 0)
 		return 0;
 
 	std::cout << "Hit <Enter> to exit\n";
